@@ -45,6 +45,12 @@ fun whenStuff(){
     }
 
     println(y)
+
+    //smart casting is also a thing
+    when (x) {
+        is Int -> print(x + 1)
+        //etc
+    }
 }
 
 fun loopTime(){
