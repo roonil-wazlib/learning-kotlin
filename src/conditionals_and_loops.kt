@@ -48,11 +48,72 @@ fun whenStuff(){
 
     //smart casting is also a thing
     when (x) {
-        is Int -> print(x + 1)
+        is Int -> println(x + 1)
         //etc
+    }
+
+    forLoops()
+    whileLoops()
+    continueAndBreak()
+}
+
+fun forLoops(){
+
+    //looping through a collection
+    val ls = listOf(1,2,3)
+    for (item in ls) {
+        println("Hello world")
+    }
+
+    //looping through a range of numbers:
+
+    for (x in 0..10){ //inclusive
+        println(x)
+    }
+
+    for (x in 0 until 10){ //exludes final number like range()
+        println(x)
+    }
+
+    //changing the step and going downwards:
+    for (x in 10 downTo 0 step 2){ //inclusive
+        println(x)
+    }
+
+    //enumerate
+
+    for((index, value) in ls.withIndex()){
+        println("$index $value")
+    }
+
+    //equivalent of casting range to list:
+    val numbers = (0..9).toList()
+    println(numbers)
+}
+
+fun whileLoops(){
+
+    //essentially the same as Python
+    var x = 0
+    while (x < 10) {
+        println(x)
+        x++
     }
 }
 
-fun loopTime(){
+fun continueAndBreak(){
+    /*same as python when used in the same way however
+    we can also label which loop we want to continue to.
+     */
+    val primes = mutableListOf<Int>()
+    outer@ for (x in 1..100){
+        for (y in 2 until x){
+            if (x%y == 0){
+                continue@outer //not a prime so skips rest of inner for loop and continues back at outer
+            }
+        }
+        primes.add(x)
+    }
+    println(primes)
 
 }
