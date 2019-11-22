@@ -102,7 +102,8 @@ fun whileLoops(){
 }
 
 fun continueAndBreak(){
-    /*same as python when used in the same way however
+    /*
+    Same as python when used in the same way however
     we can also label which loop we want to continue to.
      */
     val primes = mutableListOf<Int>()
@@ -115,5 +116,4 @@ fun continueAndBreak(){
         primes.add(x)
     }
     println(primes)
-
 }
